@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron text-center" style="background-color: #E0ECF8">
+    <img src="https://www.circul8.com.au/themagicsakura/images/0-BG-Footer.png" width="100%">
+    <h1 class="display-3">Nhật Ký Online</h1>
+    <p class="lead">Lưu trữ mọi khoảnh khắc...</p>
+    <hr class="my-2">
+    <p>Đăng nhập hoặc tạo tài khoản để bắt đầu.</p>
+    <div class="alert alert-danger" th:if="${errorLogin != null}"
+         style="text-align: left; color: red; font-weight: bold; font-size: 13px"
+         th:text="${errorLogin}">
+    </div>
+    <form class="form-group" th:action="@{/registration.html}" method="POST" th:object="${taiKhoan}">
+        <div class="form-group">
+            <br>
+            <input  type="text" name="tenTaiKhoan" width="100px" placeholder="Nhập Tên Đăng Nhập" th:field="*{TenTaiKhoan}"><br>
+            <br>
+            <input type="password" name="matKhau" width="100px" placeholder="Nhập Mật Khẩu" th:field="*{MatKhau}"><br>
+            <br>
+            <input type="password" name="xacNhanMatKhau" width="100px" placeholder="Xác Nhận Mật Khẩu"><br>
+            <br>
+            <input type="text" name="hoTen" width="100px" placeholder="Nhập Họ Tên" th:field="*{HoTen}"><br>
+            <br>
+            <input type="text" name="email" width="100px" placeholder="Nhập Email" th:field="*{Email}"><br>
+            <br>
+        </div>
+        <p class="lead">
+            <button class="btn btn-primary btn-lg" type="submit" style="width: 200px" >Đăng Ký</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="index.html" class="btn btn-primary btn-lg" style="width: 180px" >Trở Lại Đăng Nhập</a>
+        </p>
+    </form>
+</div>
+</body>
+</html>

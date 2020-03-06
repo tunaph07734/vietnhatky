@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi mật khẩu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron" style="background-color: #E0ECF8">
+    <img src="https://www.circul8.com.au/themagicsakura/images/0-BG-Footer.png" width="100%">
+    <div class="text-center">
+        <h1 class="display-3">Nhật Ký Online</h1>
+
+        <p class="lead">Lưu trữ mọi khoảnh khắc...</p>
+        <hr class="my-2">
+        <a href="/changePass.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Đổi Mật Khẩu</a>
+        <a href="/view.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Danh Sách Bài Viết</a>
+        <a href="/logout.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Đăng Xuất</a>
+    </div>
+    <hr class="my-2">
+    <div class="text-center">
+        <div class="alert alert-danger" th:if="${errorChangePass != null}"
+             style="text-align: left; color: red; font-weight: bold; font-size: 13px"
+             th:text="${errorChangePass}">
+        </div>
+        <form class="form-group" th:action="@{/changePass.html}" method="POST">
+            <div class="form-group">
+                <label>Mật Khẩu Cũ</label><br>
+                <input type="password" name="matKhauCu" width="100px"><br>
+                <label>Mật Khẩu Mới</label><br>
+                <input type="password" name="matKhauMoi" width="100px"><br>
+                <label>Nhập Lại Mật Khẩu Mới</label><br>
+                <input type="password" name="nhapLai" width="100px">
+            </div>
+            <p class="lead">
+                <button class="btn btn-primary btn-lg" type="submit">Đăng Nhập</button>
+            </p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

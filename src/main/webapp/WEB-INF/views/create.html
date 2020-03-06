@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Bài Viết</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron" style="background-color: #E0ECF8">
+    <img src="https://www.circul8.com.au/themagicsakura/images/0-BG-Footer.png" width="100%">
+    <h1 class="display-3">Nhật Ký Online</h1>
+
+    <p class="lead">Lưu trữ mọi khoảnh khắc...</p>
+    <p class="lead" ><b><i>Tạo Bài Viết</i></b></p>
+    <hr class="my-2">
+    <form action="info.html" style="display: inline">
+        <button href="info.html" class="btn btn-primary" style="width: 170px">Thông Tin Cá Nhân</button>
+    </form>
+    <form action="view.html" style="display: inline ;margin-left: 10px">
+        <button href="view.html" class="btn btn-primary" style="width: 170px">Danh Sách Bài Viết</button>
+    </form>
+    <form action="logout.html" style="display: inline ;margin-left: 10px">
+        <button href="logout" class="btn btn-primary" style="width: 170px">Đăng Xuất</button>
+    </form>
+    <hr class="my-2">
+<!--<th:block th:if="${message}">-->
+<!--    <p th:text="${message}"></p>-->
+<!--</th:block>-->
+    <div class="alert alert-danger" th:if="${message != null}"
+         style="text-align: left; color: red; font-weight: bold; font-size: 13px"
+         th:text="${message}">
+    </div>
+<form th:action="@{/create.html}"  method="post" th:object="${baiViet}" class="form-group">
+    <div class="form-group">
+        Tiêu Đề<br>
+            <input type="text" th:field="*{TieuDe}" style="width: 100%"/><br>
+            Mô Tả<br>
+            <input type="text" th:field="*{MoTa}" style="width: 100%"/><br>
+            Nội Dung<br>
+            <textarea id="w3mission" rows="4" cols="195" th:field="*{NoiDung}"></textarea><br>
+            Ngày<br>
+            <input type="date" id="ngayDang" th:field="*{Ngay}" style="width: 100%"/><br>
+            Ảnh<br>
+            <input type="text" th:field="*{Anh}" style="width: 100%"/><br>
+            Trạng Thái<br>
+            <input type="number" th:field="*{TrangThai}" min="0" max="1"><br><br>
+            <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-lg" value="Tạo Bài Viết">
+            </div>
+    </div>
+</form>
+</div>
+</body>
+</html>

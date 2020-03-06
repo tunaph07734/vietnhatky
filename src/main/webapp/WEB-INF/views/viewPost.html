@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Xem Bài Viết</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron" style="background-color: #E0ECF8">
+    <img src="https://www.circul8.com.au/themagicsakura/images/0-BG-Footer.png" width="100%">
+    <div class="text-center">
+    <h1 class="display-3">Nhật Ký Online</h1>
+
+    <p class="lead">Lưu trữ mọi khoảnh khắc...</p>
+    <hr class="my-2">
+        <a href="/info.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Thông Tin Cá Nhân</a>
+        <a href="/view.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Danh Sách Bài Viết</a>
+        <a href="/logout.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Đăng Xuất</a>
+    </div>
+    <hr class="my-2">
+    <div class="text-center">
+<th:block th:each="BaiViet : ${baiViet}">
+    <img type="text" th:src="${BaiViet.get().getAnh()}" height="400px"/><br>
+    <h2 th:text="${BaiViet.get().getTieuDe()}" style="color: brown"></h2><br>
+    <span th:text="${BaiViet.get().getNgay()}"></span><br><br>
+
+    <span th:text="${BaiViet.get().getMoTa()}" style="font-size: 20px"></span><br>
+    <span th:text="${BaiViet.get().getNoiDung()}" style="font-size: 16px"></span><br>
+</th:block>
+    </div>
+</div>
+</body>
+</html>

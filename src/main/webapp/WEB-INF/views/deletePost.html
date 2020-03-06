@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác Nhận Xóa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron" style="background-color: #E0ECF8">
+    <img src="https://www.circul8.com.au/themagicsakura/images/0-BG-Footer.png" width="100%">
+    <h1 class="display-3">Nhật Ký Online</h1>
+
+    <p class="lead">Lưu trữ mọi khoảnh khắc...</p>
+    <p class="lead" ><b><i>Xóa Bài Viết</i></b></p>
+    <hr class="my-2">
+    <a href="info.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Thông Tin Cá Nhân</a>
+    <a href="view.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Danh Sách Bài Viết</a>
+    <a href="logout.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Đăng Xuất</a>
+    <hr class="my-2">
+<h2>Bạn Có Chắc Chắn</h2>
+<form th:action="@{/deletePost}" th:object="${baiViet}" method="post">
+    <input th:type="hidden" name="id" th:field="*{MaBaiViet}">
+            <td><input type="submit" class="btn btn-primary" value="Xóa Bài Viết"></td>
+</form>
+</div>
+</body>
+</html>

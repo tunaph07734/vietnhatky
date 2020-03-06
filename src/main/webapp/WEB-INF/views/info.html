@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông Tin Cá Nhân</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron" style="background-color: #E0ECF8">
+    <img src="https://www.circul8.com.au/themagicsakura/images/0-BG-Footer.png" width="100%">
+    <div class="text-center">
+        <h1 class="display-3">Nhật Ký Online</h1>
+
+        <p class="lead">Lưu trữ mọi khoảnh khắc...</p>
+        <hr class="my-2">
+
+        <a href="/changePass.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Đổi Mật Khẩu</a>
+
+        <a href="/view.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Danh Sách Bài Viết</a>
+
+        <a href="/logout.html" class="btn btn-primary" style="width: 170px;margin-left: 10px">Đăng Xuất</a>
+    </div>
+    <hr class="my-2">
+    <br>
+    <br>
+<th:block th:each="TaiKhoan : ${taiKhoan}">
+    Chào Bạn :
+    <span th:text="${taiKhoan.hoTen}"></span><br>
+    Tên Tài Khoản :
+    <span th:text="${taiKhoan.tenTaiKhoan}"></span><br>
+    Email :
+    <span th:text="${taiKhoan.email}"></span><br>
+</th:block>
+</body>
+</html>
